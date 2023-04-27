@@ -1,0 +1,17 @@
+steps:
+  # Run the Maven build
+  - name: 'gcr.io/cloud-builders/mvn'
+    entrypoint: 'mvn'
+    args: ['clean', 'install', '-DskipTests']
+
+  # Build Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/explorecali-be', '.']
+
+  # Push the Docker image to GCR
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/explorecali-be:latest']
+
+images: ['gcr.io/$PROJECT_ID/explorecali-be']
+
+
