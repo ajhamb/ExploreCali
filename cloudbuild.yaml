@@ -1,6 +1,6 @@
 steps:
   # Run the Maven build
-  - name: 'gcr.io/cloud-builders/mvn'
+  - name: 'maven:3.8.3-jdk-20'
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
