@@ -1,6 +1,6 @@
 steps:
   # Run the Maven build
-  - name: 'maven:3.8.3-jdk-20'
+  - name: 'maven'
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
 
