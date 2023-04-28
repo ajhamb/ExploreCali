@@ -6,7 +6,7 @@ steps:
 
   # Build Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/explorecali-be', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/explorecali-be','-f', 'docker/Dockerfile', '.']
 
   # Push the Docker image to GCR
   - name: 'gcr.io/cloud-builders/docker'
