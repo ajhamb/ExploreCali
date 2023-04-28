@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -36,6 +38,11 @@ public class ExplorecaliApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		String resourcePath = "classpath:ExploreCalifornia.json";
+		File resourceFile = ResourceUtils.getFile(resourcePath);
+		System.out.println("Resource file path: " + resourceFile.getAbsolutePath());
+
+
 		createTourPackages();
 		long numOfTourPackages = tourPackageService.total();
 		createTours(importFile);
