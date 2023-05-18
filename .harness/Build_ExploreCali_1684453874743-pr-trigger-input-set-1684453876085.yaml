@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_ExploreCali_1684453874743-pr-trigger-input-set
+  identifier: Build_ExploreCali_1684453874743prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_ExploreCali_1684453874743
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
